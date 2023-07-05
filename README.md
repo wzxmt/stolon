@@ -25,8 +25,8 @@ This chart will do the following:
 To install the chart with the release name `my-release`:
 
 ```bash
-$ git clone https://github.com/lwolf/stolon-chart
-$ cd stolon-chart
+$ git clone https://github.com/wzxmt/stolon
+$ cd stolon
 $ helm dep build
 $ helm install --name my-release .
 ```
@@ -94,9 +94,3 @@ $ helm install --name my-release -f values.yaml .
 ## Persistence
 
 The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/persistent-volumes/) volume at this location. The volume is created using dynamic volume provisioning.
-
-## SSL
-To enable encrypted traffic, create certificates according to these instructions: https://www.postgresql.org/docs/9.6/static/ssl-tcp.html
-The secret should hold servert.crt and server.key are required, by that name. For your convenience a [script](/scripts/create_pg_secret.sh) is included to create the secret in the cluster.
-
-The use of **Client Certificates** is not supported
